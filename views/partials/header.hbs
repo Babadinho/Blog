@@ -1,0 +1,60 @@
+ <div class="navbarheader">
+ <div class="container">
+ <div class="site-mobile-menu">
+      <div class="site-mobile-menu-header bg-light">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+    <header class="site-navbar" role="banner">
+      <div class="container-fluid">
+        <div class="row align-items-center">
+          
+          {{!-- <div class="col-12 search-form-wrap js-search-form">
+            <form method="get" action="#s">
+              <input type="text" id="s" class="form-control" placeholder="Search...">
+              <button class="search-btn" type="submit"><span class="icon-search"></span></button>
+            </form>
+          </div> --}}
+
+          <div class="col-4 site-logo">
+            <a href="/" class="text-black h2 mb-0">Donald's Blog</a>
+          </div>
+
+          <div class="col-8 text-right">
+            <nav class="site-navigation" role="navigation">
+              <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block mb-0">
+                {{#each category}}
+                <li><a href="/category/{{this._id}}">{{this.categoryName}}</a></li>
+                {{/each}}
+                {{!-- <li class="dropdown ml-auto">
+                  <a class="btn dropdown-toggle text-black text-left" style="background-color:transparent" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Categories
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    {{#each category}}
+                    <a class="dropdown-item" href="#">{{this.categoryName}} <span class="badge badge-primary badge-pill float-right mt-1">14</span></a>
+                    {{/each}}
+                </div></li> --}}
+                {{#if user}}
+                  <li><a href="/user/dashboard" class="btn btn-success mb-0 text-white" role="button" style="padding-left:15px; padding-right:15px;">Dashboard</a></li>
+                {{else}}
+                <li><a href="/account/login" class="btn btn-primary mb-0 text-white" role="button" style="padding-left:15px; padding-right:15px;">Login</a></li>
+                <li><a href="/account/register" class="btn btn-secondary  text-white" role="button" style="padding-left:15px; padding-right:15px;">Sign Up</a></li>
+                {{/if}}
+
+                {{#if (eq user.role 'admin')}}
+                  <li><a href="/admin" class="btn btn-danger mb-0 text-white" role="button" style="padding-left:15px; padding-right:15px;">Admin</a></li>
+                {{/if}}
+                {{!-- <li class="d-none d-lg-inline-block"><a href="#" class="js-search-toggle"><span class="icon-search"></span></a></li> --}}
+              </ul>
+            </nav>
+            <a href="#" class="site-menu-toggle js-menu-toggle text-black d-inline-block d-lg-none"><span class="icon-menu h3"></span></a></div>
+          </div>
+
+      </div>
+      </div>
+    </div>
+    </header>

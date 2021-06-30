@@ -1,0 +1,17 @@
+<section class="pagination">
+<div class="custom-pagination" id="page">
+    {{#if (and (ne currentPage 1) (ne previousPage 1))}}
+        <a href="?page=1#posts">1</a>
+    {{/if}}
+    {{#if hasPreviousPage}}
+        <a href="?page={{previousPage}}#posts">{{previousPage}}</a>
+    {{/if}}
+    <a href="?page={{currentPage}}#posts" class="active">{{currentPage}}</a>
+    {{#if hasNextPage }}
+        <a href="?page={{nextPage}}#posts">{{nextPage}}</a>
+    {{/if}}
+    {{#if (and (ne lastPage currentPage) (ne nextPage lastPage))}}
+        <a href="?page={{lastPage}}#posts">{{lastPage}}</a>
+    {{/if}}
+    </div>
+</section>
